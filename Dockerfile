@@ -20,12 +20,18 @@ RUN apt-get update \
   && add-apt-repository -y "deb [arch=amd64] http://packages.confluent.io/deb/3.1 stable main" \
   && apt-get update \
   && apt-get install -y \
+    build-essential \
     curl \
+    gfortran \
     git-all \
     language-pack-id \
+    libatlas-base-dev \
+    libblas-dev \
     libcurl4-openssl-dev \
     libffi-dev \
+    libfreetype6-dev \
     libjpeg-dev \
+    liblapack-dev \
     libmaxminddb-dev \
     libmaxminddb0 \
     libmysqlclient-dev \
