@@ -40,12 +40,22 @@ RUN apt-get update \
     libxslt1-dev \
     mmdb-bin \
     mysql-client \
+    ntp \
     postgresql-client \
     python3.6 \
     python3.6-dev \
     python3.6-venv \
     zlib1g-dev \
   && apt-get clean
+
+RUN mkdir /usr/share/GeoIP && \
+    chmod 755 /usr/share/GeoIP && \
+    cd /usr/share/GeoIP/ && \
+    wget http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz && \
+    tar xzvf GeoLite2-City.tar.gz && \
+    mv GeoLite2-City_*/GeoLite2-City.mmdb GeoIP2-City.mmdb && \
+    rm -r GeoLite2-City_* GeoLite2-City.tar.gz && \
+    chmod 444 GeoIP2-City.mmdb
 
 RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
   && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
