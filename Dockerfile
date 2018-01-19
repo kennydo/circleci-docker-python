@@ -9,7 +9,7 @@ ENV LC_ALL en_US.UTF-8
 
 ENV DOCKERIZE_VERSION v0.4.0
 
-ENV PATH "${PATH}:/opt/aws_cli_venv/bin"
+ENV PATH "${PATH}:/opt/cli_venv/bin"
 
 RUN apt-get update \
   && apt-get install -y software-properties-common \
@@ -64,6 +64,6 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 RUN wget https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 -O /usr/local/bin/jq \
   && chmod a+x /usr/local/bin/jq
 
-RUN python3.6 -m venv /opt/aws_cli_venv \
-  && /opt/aws_cli_venv/bin/pip install --upgrade awscli \
+RUN python3.6 -m venv /opt/cli_venv \
+  && /opt/cli_venv/bin/pip install --upgrade awscli requests \
   && rm -r /root/.cache/pip
