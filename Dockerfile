@@ -14,7 +14,7 @@ ENV PATH "${PATH}:/opt/cli_venv/bin"
 RUN apt-get update \
   && apt-get install -y software-properties-common \
   && add-apt-repository -y ppa:maxmind/ppa \
-  && add-apt-repository -y ppa:fkrull/deadsnakes \
+  && add-apt-repository -y ppa:deadsnakes/ppa \
   && apt-get install -y wget \
   && wget -qO - http://packages.confluent.io/deb/3.1/archive.key | sudo apt-key add - \
   && add-apt-repository -y "deb [arch=amd64] http://packages.confluent.io/deb/3.1 stable main" \
