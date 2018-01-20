@@ -16,8 +16,8 @@ RUN apt-get update \
   && add-apt-repository -y ppa:maxmind/ppa \
   && add-apt-repository -y ppa:deadsnakes/ppa \
   && apt-get install -y wget \
-  && wget -qO - http://packages.confluent.io/deb/3.1/archive.key | sudo apt-key add - \
-  && add-apt-repository -y "deb [arch=amd64] http://packages.confluent.io/deb/3.1 stable main" \
+  && wget -qO - http://packages.confluent.io/deb/3.2/archive.key | sudo apt-key add - \
+  && add-apt-repository -y "deb [arch=amd64] http://packages.confluent.io/deb/3.2 stable main" \
   && apt-get update \
   && apt-get install -y \
     curl \
