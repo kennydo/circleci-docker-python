@@ -45,6 +45,7 @@ RUN apt-get update \
     python3.6 \
     python3.6-dev \
     python3.6-venv \
+    unzip \
     zlib1g-dev \
   && apt-get clean
 
