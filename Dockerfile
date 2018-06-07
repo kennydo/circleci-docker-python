@@ -42,9 +42,9 @@ RUN apt-get update \
     mysql-client \
     ntp \
     postgresql-client \
-    python3.6 \
-    python3.6-dev \
-    python3.6-venv \
+    python3.7 \
+    python3.7-dev \
+    python3.7-venv \
     unzip \
     zlib1g-dev \
   && apt-get clean
@@ -65,6 +65,6 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 RUN wget https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 -O /usr/local/bin/jq \
   && chmod a+x /usr/local/bin/jq
 
-RUN python3.6 -m venv /opt/cli_venv \
+RUN python3.7 -m venv /opt/cli_venv \
   && /opt/cli_venv/bin/pip install --upgrade awscli requests \
   && rm -r /root/.cache/pip
