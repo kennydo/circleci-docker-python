@@ -42,9 +42,9 @@ RUN apt-get update \
     mysql-client \
     ntp \
     postgresql-client \
-    python3.7 \
-    python3.7-dev \
-    python3.7-venv \
+    python3.7=3.7.0~b5-1+trusty1 \
+    python3.7-dev=3.7.0~b5-1+trusty1 \
+    python3.7-venv=3.7.0~b5-1+trusty1 \
     unzip \
     zlib1g-dev \
   && apt-get clean
