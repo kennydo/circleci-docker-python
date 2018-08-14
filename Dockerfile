@@ -66,5 +66,6 @@ RUN wget https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 -O /
   && chmod a+x /usr/local/bin/jq
 
 RUN python3.7 -m venv /opt/cli_venv \
+  && /opt/cli_venv/bin/pip install --upgrade pip \
   && /opt/cli_venv/bin/pip install --upgrade awscli requests \
   && rm -r /root/.cache/pip
