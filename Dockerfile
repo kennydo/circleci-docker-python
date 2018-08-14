@@ -13,8 +13,9 @@ ENV PATH "${PATH}:/opt/cli_venv/bin"
 
 RUN apt-get update \
   && apt-get install -y software-properties-common \
-  && add-apt-repository -y ppa:maxmind/ppa \
   && add-apt-repository -y ppa:deadsnakes/ppa \
+  && add-apt-repository -y ppa:maxmind/ppa \
+  && add-apt-repository -y ppa:ondrej/apache2 \
   && apt-get install -y wget \
   && wget -qO - http://packages.confluent.io/deb/3.2/archive.key | sudo apt-key add - \
   && add-apt-repository -y "deb [arch=amd64] http://packages.confluent.io/deb/3.2 stable main" \
@@ -41,6 +42,7 @@ RUN apt-get update \
     mmdb-bin \
     mysql-client \
     ntp \
+    openssl \
     postgresql-client \
     python3.7 \
     python3.7-dev \
