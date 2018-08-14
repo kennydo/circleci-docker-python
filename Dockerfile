@@ -41,7 +41,6 @@ RUN apt-get update \
     mmdb-bin \
     mysql-client \
     ntp \
-    openssl \
     postgresql-client \
     python3.7 \
     python3.7-dev \
