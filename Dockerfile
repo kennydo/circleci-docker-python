@@ -4,9 +4,12 @@ MAINTAINER chinesedewey@gmail.com
 
 ENV DOCKERIZE_VERSION v0.6.1
 
+# We don't want to interact during image builds
+ENV DEBIAN_FRONTEND noninteractive
+
 # Set up locales
 RUN apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y locales \
+    && apt-get install -y locales \
     && sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
     && dpkg-reconfigure --frontend=noninteractive locales \
     && update-locale LANG=en_US.UTF-8
