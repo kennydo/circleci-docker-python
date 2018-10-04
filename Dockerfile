@@ -1,13 +1,13 @@
-FROM ubuntu:14.04.5
+FROM ubuntu:18.04
 
 MAINTAINER chinesedewey@gmail.com
 
-RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
+ENV DEBIAN_FRONTEND=noninteractive
 
-ENV DOCKERIZE_VERSION v0.4.0
+ENV DOCKERIZE_VERSION v0.6.1
 
 ENV PATH "${PATH}:/opt/cli_venv/bin"
 
@@ -15,9 +15,6 @@ RUN apt-get update \
   && apt-get install -y software-properties-common \
   && add-apt-repository -y ppa:maxmind/ppa \
   && add-apt-repository -y ppa:deadsnakes/ppa \
-  && apt-get install -y wget \
-  && wget -qO - http://packages.confluent.io/deb/3.2/archive.key | sudo apt-key add - \
-  && add-apt-repository -y "deb [arch=amd64] http://packages.confluent.io/deb/3.2 stable main" \
   && apt-get update \
   && apt-get install -y \
     curl \
@@ -31,10 +28,6 @@ RUN apt-get update \
     libmysqlclient-dev \
     libpng-dev \
     libpq-dev \
-    librdkafka++1 \
-    librdkafka-dev \
-    librdkafka-dev \
-    librdkafka1 \
     libssl-dev \
     libxml2-dev \
     libxslt1-dev \
@@ -46,6 +39,7 @@ RUN apt-get update \
     python3.7-dev \
     python3.7-venv \
     unzip \
+    wget \
     zlib1g-dev \
   && apt-get clean
 
