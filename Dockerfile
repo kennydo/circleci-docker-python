@@ -35,9 +35,9 @@ RUN apt-get update \
     mysql-client \
     ntp \
     postgresql-client \
-    python3.7 \
-    python3.7-dev \
-    python3.7-venv \
+    python3.6 \
+    python3.6-dev \
+    python3.6-venv \
     unzip \
     wget \
     zlib1g-dev \
